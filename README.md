@@ -32,19 +32,26 @@ Copy generated UTBMap.kext to EFI\OC\Kexts
 
 **Don't Messing NVRAM Setting except boot-args**
 
-You can edit config.plist from OpenShell without bootint to windows
+You can edit config.plist from OpenShell without booting to windows
 but you must test wich partition of your installer
-OpenShell will list available partiotion first time you open it
+OpenShell will list available partition first time you open it
 
 type, example :
 `` FS0: ``
+
 `` ls ``
 
+if you not see EFI folder, try another partion i.e FS1:
+
 if you see EFI folder, type this command:
+
 `` cd EFI\OC\ ``
+
 `` edit config.plist ``
+
 make your necessary edit
 Press Ctrl+S to save
+
 type command ``reset`` to reboot PC
 
 
