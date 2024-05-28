@@ -1,6 +1,6 @@
 Skylake i5 6500 OpenCore Config
 
-# **VERY IMPORTANT**, there is no guarantee this Config working on your System
+## **VERY IMPORTANT**, there is no guarantee this Config working on your System
 
 ## Computer Hardware
 
@@ -14,30 +14,36 @@ Skylake i5 6500 OpenCore Config
 * Installer : Mac OS Sonoma
 
 # A bit History
-It's been a long time since I installed Hackintosh
-Last time I used iAtkos distro on my Asus Laptop to install Snow Leopard, 
-just knew OpenCore Recently, god, the documentation is really awesome.
-and since I'm a programmer so all the setting and coding looks familiar, LOL.
+It's been a long time since I installed Hackintosh.
+
+Last time I used iAtkos distro on my Asus Laptop to install Snow Leopard.
+
+Just knew OpenCore recently, God, the documentation is really awesome.
+
+Since I'm a programmer so all the setting and coding looks familiar, LOL.
 So I decided to give it a try
 
 USB Controller is the most hurdle for installing hackintosh to this system
 
-Copy generated UTBMap.kext to EFI\OC\Kexts
-
 
 You **NEED** to mapping your motherboard USB using [USBToolBox](https://github.com/USBToolBox/tool)
 
-SSDT also **very important**, don't use precompiled from internet
+Failed to do so will make your usb keyboard or mouse not working. On this config I added USBInjectAll for last resort.
+
+Copy generated UTBMap.kext to EFI\OC\Kexts
 
 
-BUILD your own using [SSDTTime](https://github.com/corpnewt/SSDTTime)
+SSDT also **very important**, don't use precompiled from internet, every motherboard has different pci layout.
+
+
+The best thing is to BUILD your own, easiesr way using [SSDTTime](https://github.com/corpnewt/SSDTTime)
 
 copy SSDTTime generated .aml to EFI\OC\ACPI\
 
+if have embeded programming knowledges you can manually add ssdt using iasl.
 
-Minimum SMBIOS to use : iMac18,1 but this config I used iMac19,1
+Minimum SMBIOS to use : iMac18,1 but this config I used iMac19,1 so no need to use -no_compat_check to kernel args
 You can generate your own using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
-
 
 **Don't Messing NVRAM Setting except boot-args**
 
@@ -54,7 +60,7 @@ type this command, example :
 
 `` ls ``
 
-if you not see EFI folder, try another partion i.e FS1:
+if you not see EFI folder, try another partion, i.e FS1:
 
 if you see EFI folder, type this command:
 
@@ -63,7 +69,7 @@ if you see EFI folder, type this command:
 `` edit config.plist ``
 
 make your necessary edit
-Press Ctrl+S to save
+Press **Ctrl+S** to save
 
 type command ``reset`` to reboot PC
 
