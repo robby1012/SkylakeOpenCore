@@ -22,21 +22,34 @@ So I decided to give it a try
 
 USB Controller is the most hurdle for installing hackintosh to this system
 
+Copy generated UTBMap.kext to EFI\OC\Kexts
+
+
 You **NEED** to mapping your motherboard USB using [USBToolBox](https://github.com/USBToolBox/tool)
+
 SSDT also **very important**, don't use precompiled from internet
+
+
 BUILD your own using [SSDTTime](https://github.com/corpnewt/SSDTTime)
+
+copy SSDTTime generated .aml to EFI\OC\ACPI\
+
+
 Minimum SMBIOS to use : iMac18,1 but this config I used iMac19,1
 You can generate your own using [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
-Copy generated UTBMap.kext to EFI\OC\Kexts
 
 **Don't Messing NVRAM Setting except boot-args**
 
+
 You can edit config.plist from OpenShell without booting to windows
+
 but you must test wich partition of your installer
+
 OpenShell will list available partition first time you open it
 
-type, example :
+type this command, example :
+
 `` FS0: ``
 
 `` ls ``
